@@ -32,6 +32,43 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
+            List <string>vehicles = new List<string>();
+            
+                var carone = new Car();
+
+                carone.Make = "Honda";
+                carone.Model = "CRV";
+                carone.Year = 2010;
+                carone.HasTrunk = true;
+                vehicles.Add(carone.Make);
+
+                var motorcycleone = new Motorcycle();
+                motorcycleone.Make = "BMW";
+                motorcycleone.Model ="X";
+                motorcycleone.Year = 1999;
+                motorcycleone.HasSideCar = true;
+                vehicles.Add(motorcycleone.Make);
+
+                Vehicle cartwo = new Car();
+
+                cartwo.Make = "Chevrolet";
+                cartwo.Model = "Suburban";
+                cartwo.Year = 2002;
+                
+                vehicles.Add(cartwo.Make);
+
+                Vehicle motorcycletwo = new Motorcycle();
+                motorcycletwo.Make = "Harley Davidson";
+                motorcycletwo.Model = "Harley";
+                motorcycletwo.Year = 2022;
+                
+                vehicles.Add(motorcycletwo.Make);
+
+
+                foreach (var vehicle in vehicles)
+                {
+                    Console.WriteLine($"These are the current vehicles available: {vehicle}");
+                }
 
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
@@ -46,8 +83,15 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
-            Console.ReadLine();
+            motorcycleone.DriveVirtual();
+            motorcycleone.DriveAbstract();
+            carone.DriveAbstract();
+            carone.DriveVirtual();
+
+                #endregion
+                Console.ReadLine();
+
+            
         }
     }
 }
